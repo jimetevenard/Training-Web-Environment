@@ -24,7 +24,6 @@ jobs:
           tags: |
             jimetevenard/code-env:relaxng
             jimetevenard/code-env:relaxng-latest
-            jimetevenard/code-env:relaxng-$(date +%s)
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
