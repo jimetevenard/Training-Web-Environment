@@ -13,8 +13,7 @@ USER root
 
 # Ceci pour éxécuter Jing
 
-RUN apt-get update && apt-get install -y openjdk-11-jdk
-
+RUN apt-get update && apt-get install -y openjdk-11-jre-headless
 # Clone du TP XML
 # ==============
 
@@ -36,6 +35,15 @@ RUN echo "alias jing='java -jar /opt/jing/jing.jar'" > /home/coder/.bash_aliases
 
 # Mise à jour de la consigne du README avec l'alias
 RUN sed -i 's/java -jar jing.jar/jing/g' README.md
+
+# Commit des modifications (le répertoire est gité)
+RUN git config --global user.name "Docker Env"
+RUN git config --global user.email contact@jimetevenard.com
+RUN git commit --all -m "[Docker env] Mise en place de l'environnement"
+
+
+# Le dépot à été cloné par root
+RUN chown -R coder /home/coder/project
 
 # Retour à l'user et au pwd de fin de Dockerfile parent. Utile ? (lancement ?)
 USER coder
