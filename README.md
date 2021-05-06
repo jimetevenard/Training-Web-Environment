@@ -7,7 +7,7 @@ Les [fichiers sources du TP](https://github.com/jimetevenard/TP-RelaxNg.git) et 
 
 ## Lancement et utilisation
 
-Cette image est publiée automatiquement sur le dépôt central [Docker Hub](https://hub.docker.com/repository/docker/jimetevenard/code-env) à chaque *commit* sur la branche *master* de ce repo. (cf [workflow Github](.github/workflows/docker-image.yml))
+Cette image est publiée automatiquement sur le dépôt central [Docker Hub](https://hub.docker.com/r/jimetevenard/code-env/tags) à chaque *commit* sur la branche *master* de ce repo. (cf [workflow Github](.github/workflows/docker-image.yml))
 
 ````
 # Pull de l'image depuis Docker Hub (facultatif, sera fait lors du run à défaut)
