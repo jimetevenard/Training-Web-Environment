@@ -6,16 +6,23 @@ FROM codercom/code-server:3.0.0
 #  - accessible de l'extérieur depuis un navigateur web
 #  - Cf. https://github.com/cdr/code-server
 
+
 USER root
 
-# Installation de Java dans le container
-# ===============================
+RUN apt-get update 
 
-# Ceci pour éxécuter Jing
+# Install et run NGINX
+RUN apt-get install -y nginx
 
-RUN apt-get update && apt-get install -y openjdk-11-jre-headless
-# Clone du TP XML
-# ==============
+
+
+
+
+
+
+
+RUN apt-get install -y openjdk-11-jre-headless
+
 
 WORKDIR /home/coder/project
 RUN git clone https://github.com/jimetevenard/TP-RelaxNg.git .
@@ -44,7 +51,3 @@ RUN git commit --all -m "[Docker env] Mise en place de l'environnement"
 
 # Le dépot à été cloné par root
 RUN chown -R coder /home/coder/project
-
-# Retour à l'user et au pwd de fin de Dockerfile parent. Utile ? (lancement ?)
-USER coder
-WORKDIR /home/coder
