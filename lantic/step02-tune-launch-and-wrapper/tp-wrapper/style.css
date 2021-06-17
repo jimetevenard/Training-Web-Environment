@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    background-color: bisque;
+}
+aside {
+    overflow: scroll;
+    background-color: aquamarine;
+    padding: 10px;
+}
+
+
+
+/* +++++++++++++++++ */
+
+.wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+
+    /*
+      Transition sur la grid : Support uniquement dans Firefox pour le moment.
+      https://developer.mozilla.org/fr/docs/Web/CSS/grid-template-columns#compatibilit%C3%A9_des_navigateurs
+    */
+    transition: grid-template-columns 0.5s ease-out;
+  }
+.wrapper[data-collapsed="true"] {
+    grid-template-columns: 1fr 80px;
+  }

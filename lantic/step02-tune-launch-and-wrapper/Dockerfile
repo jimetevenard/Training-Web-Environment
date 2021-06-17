@@ -1,5 +1,14 @@
 FROM code-env:post-install
 
+EXPOSE 80/tcp
+
+
+# COOPIE du rep wrapper
+RUN mkdir /usr/share/nginx/html/env/
+COPY tp-wrapper/ /usr/share/nginx/html/env/
+
+# COPIE de la conf
+COPY nginx.conf /etc/nginx
 
 # TODO CECI EST COMMUN AUSSI
 COPY docker-init.sh /home/coder/
