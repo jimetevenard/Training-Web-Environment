@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 iframe {
     border: none;
@@ -13,8 +14,16 @@ main {
 }
 aside {
     overflow: scroll;
-    background-color: aquamarine;
+    background-color: rgb(240, 243, 242);
     padding: 10px;
+    color: rgb(63, 63, 63);
+}
+aside h1, aside h2, aside h3, aside h4, aside h5, aside h6 {
+    color: rgb(21, 47, 119);
+}
+
+aside .tp-content {
+    margin: 20px;
 }
 
 
@@ -34,4 +43,8 @@ aside {
   }
 .wrapper[data-collapsed="true"] {
     grid-template-columns: 1fr 80px;
-  }
+}
+
+.wrapper[data-collapsed="true"] .tp-content {
+    display: none;
+}

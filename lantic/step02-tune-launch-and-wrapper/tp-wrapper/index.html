@@ -14,16 +14,27 @@
         </main>
         <aside>
             <button id="btn-repli">Replier</button>
-            <h1>Mon super TP</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida risus pellentesque dignissim scelerisque. Cras commodo dui vitae luctus sodales. Nam viverra a dolor volutpat molestie. Maecenas cursus enim malesuada feugiat feugiat. Aenean ultricies malesuada orci eu aliquet. Sed sollicitudin placerat magna in interdum. Curabitur vitae nulla euismod, porta massa ac, iaculis magna. Sed efficitur ornare tortor mattis auctor. Suspendisse congue lorem velit. Maecenas tempor lorem non lorem pellentesque, sit amet venenatis mauris facilisis. Duis eu felis auctor erat rhoncus varius. Etiam ac nibh iaculis nulla venenatis mollis sit amet eget velit. Mauris a diam vitae quam efficitur tempus at nec lacus.
-            </p>
-            <p>
-                Nam sit amet diam ullamcorper, condimentum odio id, vulputate orci. Sed ultricies risus elit, eu porttitor leo aliquet sit amet. Nulla facilisi. Phasellus eu bibendum tellus. Suspendisse vestibulum lorem tortor, id molestie tellus tristique eu. In hac habitasse platea dictumst. Nunc ac massa elit. Vivamus sodales mattis dictum. Fusce vestibulum sem velit, quis accumsan erat ullamcorper ac. Integer convallis eros sed tortor ultrices, id pharetra dui sollicitudin. Aenean rhoncus nisi vel placerat pulvinar. Maecenas dictum risus libero, at faucibus nibh porttitor quis. Quisque quis massa nunc. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a diam a felis laoreet sagittis. Vestibulum eu pharetra ex, sit amet condimentum ante. Vivamus pretium laoreet consectetur.
-            </p>
-            <p>
-                Suspendisse non libero ut diam bibendum iaculis eget eu metus. Suspendisse ut consequat magna, nec vehicula justo. Aenean varius lacus eu magna tincidunt, id vehicula velit porttitor. Aliquam erat volutpat. Sed vitae vulputate purus, nec tempus felis. Etiam a vulputate quam. Donec eleifend sit amet orci ut laoreet. Suspendisse consectetur sed nisi quis finibus. Fusce ac lectus ipsum. Curabitur sagittis tortor enim. Phasellus tristique dui eu pretium cursus. Nullam eu risus ac elit sagittis consectetur. Aliquam vitae magna at nibh facilisis laoreet. Sed et mollis lorem. Curabitur ac eros erat. Cras suscipit eget dolor at tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In semper lacus quis eros ultrices, non porttitor nibh dignissim. Vestibulum lacinia velit metus.
-            </p>
+            <div class="tp-content">
+                <!-- TODO : Ne plus être en statique là dessus-->
+                <!-- TODO : Etoffer le TP -->
+                <h1 id="tp-relax-ng">TP Relax NG</h1>
+                <p>Compléter le fichier <code>livres-init.rng</code> pour qu&#39;il valide le document
+                    <code>livres.xml</code>.</p>
+                <h3 id="execution-">Execution :</h3>
+                <ul>
+                    <li>Ouvrir une console à la racine de ce projet.</li>
+                    <li>lancer <code>jing livres-init.rng livres.xml</code></li>
+                </ul>
+                <p><strong>La validation ne doit renvoyer aucune erreur.</strong></p>
+                <h3 id="test-inverse-">Test inverse :</h3>
+                <ul>
+                    <li>lancer <code>jing livres-init.rng livres-invalide.xml</code></li>
+                </ul>
+                <p><strong>Vérifier que des erreurs de validation sont bien levées.</strong></p>
+                <p>Le répertoire <code>solution/</code> contient un fichier rng valide. (mais d&#39;autres solutions
+                    sont possibles...) </p>
+
+            </div>
         </aside>
     </div>
     <script src="js/actions.js"></script>
