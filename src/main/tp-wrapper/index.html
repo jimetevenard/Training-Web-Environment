@@ -18,19 +18,63 @@
                 <!-- TODO : Ne plus être en statique là dessus-->
                 <!-- TODO : Etoffer le TP -->
                 <h1 id="tp-relax-ng">TP Relax NG</h1>
-                <p>Compléter le fichier <code>livres-init.rng</code> pour qu&#39;il valide le document
+
+                <p>Dans ce TP, vous allez valider un document XML avec un schéma RelaxNG.</p>
+
+                <p>Vous devrez compléter le fichier <code>livres-init.rng</code> pour qu&#39;il valide le document
                     <code>livres.xml</code>.</p>
-                <h3 id="execution-">Execution :</h3>
+
+                <h2>Exercice 1</h2>
+
+                <p class="consigne">Ouvrir les fichiers <code>livres.xml</code> et <code>livres-init.xml</code> dans l'éditeur.</p>
+
+                <p>Le format du document <code>livres.xml</code> est le suivant :</p>
+
+                <p>L&#39;élément racine est <code>&lt;bibliotheque&gt;</code>, composé de 0 à plusieurs <code>&lt;livres&gt;</code></p>
+
+                <p>Le <code>&lt;livre&gt;</code> possède un attribut <code>@isbn</code> obligatoire (10 caractères)<br>Le
+                    <code>&lt;livre&gt;</code> possède un attribut <code>@nombrePages</code> optionnel (Nombre entier.)</p>
+                <p>Le <code>&lt;livre&gt;</code> est composé :</p>
+
                 <ul>
-                    <li>Ouvrir une console à la racine de ce projet.</li>
-                    <li>lancer <code>jing livres-init.rng livres.xml</code></li>
+                    <li>D&#39;un <code>&lt;titre&gt;</code> et d&#39;un <code>&lt;auteur&gt;</code>, dans n&#39;importe quel ordre.
+                        et d&#39;un <code>&lt;personnage&gt;</code> optionnel.</li>
+                    <li>Un <code>&lt;auteur&gt;</code> est composé d&#39;un <code>&lt;nom&gt;</code>, d&#39;un
+                        <code>&lt;prenom&gt;</code> et d&#39;une <code>&lt;precision&gt;</code> optionnelle.</li>
+                    <li>Un <code>&lt;personnage&gt;</code> est composé soit :<ul>
+                            <li>d&#39;un <code>&lt;nom&gt;</code> et d&#39;un <code>&lt;prenom&gt;</code></li>
+                            <li>d&#39;un <code>&lt;surnom&gt;</code></li>
+                        </ul>
+                    </li>
                 </ul>
-                <p><strong>La validation ne doit renvoyer aucune erreur.</strong></p>
-                <h3 id="test-inverse-">Test inverse :</h3>
+
+                <p class="consigne">
+                    Complétez le fichier <code>livres-init.xml</code> pour qu'il valide ce document.
+                </p>
+
+
+                <h3 id="execution-">Vérifiez votre travail</h3>
+
+                <p>Nous allons valider le fichier livres.xml avec notre schéma.</p>
+
+                <p class="consigne">Ouvrir le terminal intégré à l'éditeur.</p>
+
+                <p class="consigne">Lancer la commande suivante :</p>
+
+                <pre>jing livres-init.rng livres.xml</pre>
+
+                <p class="consigne">La validation ne doit renvoyer aucune erreur.</p>
+
+                <p>Nous allons maintenant valider un document non conforme au schéma.</p>
+
                 <ul>
                     <li>lancer <code>jing livres-init.rng livres-invalide.xml</code></li>
                 </ul>
+
                 <p><strong>Vérifier que des erreurs de validation sont bien levées.</strong></p>
+
+                <h2>Solution</h2>
+
                 <p>Le répertoire <code>solution/</code> contient un fichier rng valide. (mais d&#39;autres solutions
                     sont possibles...) </p>
 
