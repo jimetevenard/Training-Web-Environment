@@ -3,7 +3,7 @@ name: Docker Image CI
 on:
   push:
     branches:
-      - 'master'
+      - 'test-nginx'
 
 jobs:
   docker:
@@ -22,8 +22,8 @@ jobs:
         with:
           push: true
           tags: |
-            jimetevenard/code-env:relaxng
-            jimetevenard/code-env:relaxng-latest
+            jimetevenard/code-env:relaxng-wrap
+            jimetevenard/code-env:relaxng-wrap-latest
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
