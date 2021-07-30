@@ -30,13 +30,13 @@ RUN git clone https://github.com/jimetevenard/TP-RelaxNg.git . \
     && git config --global user.name "Docker Env" \
     && git config --global user.email contact@jimetevenard.com \
     && git commit --all -m "[Docker env] Mise en place de l'environnement" \
-    && chown -R coder /home/coder/project \
+    && chown -R coder /home/coder/project
 
-EXPOSE 80/tcp
 
 # Wrapper HTML et reverse-proxy Nginx
 # ===================================
 
+EXPOSE 80/tcp
 
 RUN mkdir /usr/share/nginx/html/env/
 COPY src/main/tp-wrapper/ /usr/share/nginx/html/env/
