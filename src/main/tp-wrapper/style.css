@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
 }
 iframe {
     border: none;
@@ -10,10 +11,11 @@ iframe {
 }
 
 main {
+    overflow: hidden;
     background-color: bisque;
 }
 aside {
-    overflow: scroll;
+    overflow: auto;
     background-color: rgb(240, 243, 242);
     padding: 10px;
     color: rgb(63, 63, 63);
