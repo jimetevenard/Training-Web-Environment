@@ -53,7 +53,7 @@ aside pre {
     grid-template-columns: 1fr 400px;
 
     /*
-      Transition sur la grid : Support uniquement dans Firefox pour le moment.
+      Transition sur la grid : Supporté par (presque) tous les navigateurs récents !
       https://developer.mozilla.org/fr/docs/Web/CSS/grid-template-columns#compatibilit%C3%A9_des_navigateurs
     */
     transition: grid-template-columns 0.5s ease-out;
