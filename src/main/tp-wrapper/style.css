@@ -38,6 +38,9 @@ aside .consigne {
     padding: 0 0 0 1em;
     list-style-type: square;
 }
+aside .consigne li {
+   margin-bottom: 5px;
+}
 aside  strong {
     color: rgb(44, 68, 136);
 }
