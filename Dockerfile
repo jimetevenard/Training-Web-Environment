@@ -14,7 +14,7 @@ USER root
 
 RUN apt-get update \
     && apt-get install -y nginx \
-    && apt-get install -y openjdk-11-jre-headless
+    && apt-get install -y openjdk-11-jdk
 
 # Wrapper HTML et reverse-proxy Nginx
 # ===================================
@@ -22,8 +22,7 @@ RUN apt-get update \
 EXPOSE 80/tcp
 
 RUN mkdir /usr/share/nginx/html/env/
-# FixMe : Il faaudra séparer le wrapper du contenu du TP
-COPY src/main/tp-wrapper/ /usr/share/nginx/html/env/
+
 COPY src/main/nginx/nginx.conf /etc/nginx
 COPY src/main/sh/docker-init.sh /home/coder/
 
@@ -48,14 +47,24 @@ USER coder
 # Mise en place de l'env et du TP
 # ===============================
 
-RUN git clone https://github.com/jimetevenard/TP-RelaxNg.git /home/coder/project \
-    && mkdir /home/coder/jing && mv /home/coder/project/jing.jar /home/coder/jing \
-    && echo "alias jing='java -jar /home/coder/jing/jing.jar'" > /home/coder/.bash_aliases \
-    && sed -i 's/java -jar jing.jar/jing/g' /home/coder/project/README.md
+RUN code-server --install-extension vscjava.vscode-java-pack
+RUN code-server --install-extension Pivotal.vscode-boot-dev-pack
 
-COPY src/main/vscode/settings.json /home/coder/project/.vscode/settings.json
+RUN mkdir /home/coder/workspace/
 
-RUN cd /home/coder/project \
+COPY src/main/vscode/settings.json /home/coder/.local/share/code-server/User/settings.json
+RUN sudo chown -R coder /home/coder/.local/share/code-server/User/settings.json
+
+RUN cd /home/coder/workspace/ \
+    && git clone https://github.com/jimetevenard/spring-hello-world.git \
+    && echo "\nserver.port=8282" >> spring-hello-world/src/main/resources/application.properties
+#   Le port 8080 est déjà occupé par code-server (VSCode)
+
+RUN cd /home/coder/workspace/spring-hello-world \
     && git config --global user.name "Docker Env" \
     && git config --global user.email contact@jimetevenard.com \
-    && git add --all && git commit -m "[Docker env] Mise en place de l'environnement"
+    && git add --all && git commit -m "[Docker env] Mise en place Spring Hello World"
+
+# FixMe : Il faaudra séparer le wrapper du contenu du TP
+# TODO : Placé à la fin pour le debug
+COPY src/main/tp-wrapper/ /usr/share/nginx/html/env/

@@ -17,66 +17,39 @@
             <div class="tp-content">
                 <!-- TODO : Ne plus être en statique là dessus-->
                 <!-- TODO : Etoffer le TP -->
-                <h1 id="tp-relax-ng">TP Relax NG</h1>
+                <h1 id="">Environnement Java</h1>
 
-                <p>Dans ce TP, vous allez valider un document XML avec un schéma RelaxNG.</p>
+                <p>Bienvenue dans votre Environnement de travail Java</p>
 
-                <p>Vous devrez compléter le fichier <code>livres-init.rng</code> pour qu&#39;il valide le document
-                    <code>livres.xml</code>.</p>
-
-                <h2>Exercice 1</h2>
-
-                <p class="consigne">Ouvrir les fichiers <code>livres.xml</code> et <code>livres-init.xml</code> dans l'éditeur.</p>
-
-                <p>Le format du document <code>livres.xml</code> est le suivant :</p>
-
-                <p>L&#39;élément racine est <code>&lt;bibliotheque&gt;</code>, composé de 0 à plusieurs <code>&lt;livres&gt;</code></p>
-
-                <p>Le <code>&lt;livre&gt;</code> possède un attribut <code>@isbn</code> obligatoire (10 caractères)<br>Le
-                    <code>&lt;livre&gt;</code> possède un attribut <code>@nombrePages</code> optionnel (Nombre entier.)</p>
-                <p>Le <code>&lt;livre&gt;</code> est composé :</p>
-
-                <ul>
-                    <li>D&#39;un <code>&lt;titre&gt;</code> et d&#39;un <code>&lt;auteur&gt;</code>, dans n&#39;importe quel ordre.
-                        et d&#39;un <code>&lt;personnage&gt;</code> optionnel.</li>
-                    <li>Un <code>&lt;auteur&gt;</code> est composé d&#39;un <code>&lt;nom&gt;</code>, d&#39;un
-                        <code>&lt;prenom&gt;</code> et d&#39;une <code>&lt;precision&gt;</code> optionnelle.</li>
-                    <li>Un <code>&lt;personnage&gt;</code> est composé soit :<ul>
-                            <li>d&#39;un <code>&lt;nom&gt;</code> et d&#39;un <code>&lt;prenom&gt;</code></li>
-                            <li>d&#39;un <code>&lt;surnom&gt;</code></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <p class="consigne">
-                    Complétez le fichier <code>livres-init.xml</code> pour qu'il valide ce document.
+                <p>
+                    Il est basé sur Visual Studio Code. Un JDK est installé, ainsi que l'extension Java pour VSCode
                 </p>
 
+                <h2>Import d'un projet</h2>
 
-                <h3 id="execution-">Vérifiez votre travail</h3>
+                <p>Les projets Java / Maven sont automatiquement importés.</p>
 
-                <p>Nous allons valider le fichier livres.xml avec notre schéma.</p>
+                <p class="consigne">Utilisez la vue <strong>Java Projects</strong> pour naviguer plus facilement dans les sources</p>
 
-                <p class="consigne">Ouvrir le terminal intégré à l'éditeur.</p>
+                <h2>Clone d'un dépot Git</h2>
 
-                <p class="consigne">Lancer la commande suivante :</p>
+                <p>Vous pouver ouvrir un terminal par le menu <strong>Terminal > New Terminal</strong></p>
+                <p class="consigne">Saisir la commande <code>git clone https://votre-depot...</code></p>
 
-                <pre>jing livres-init.rng livres.xml</pre>
+                <h2>Accédez à votre application</h2>
 
-                <p class="consigne">La validation ne doit renvoyer aucune erreur.</p>
+                <p>
+                    Pour accéder à un port lancé en local d'environnement depuis votre navigateur local
+                    (ou autre client Web : Postman...)</p>
 
-                <p>Nous allons maintenant valider un document non conforme au schéma.</p>
+                <p class="consigne">
+                    Utilisez l'URL <code class="env-url-prefix">/proxy/&lt;PORT DE VOTRE APP&gt;</code>
+                </p>
 
-                <ul>
-                    <li>lancer <code>jing livres-init.rng livres-invalide.xml</code></li>
-                </ul>
-
-                <p><strong>Vérifier que des erreurs de validation sont bien levées.</strong></p>
-
-                <h2>Solution</h2>
-
-                <p>Le répertoire <code>solution/</code> contient un fichier rng valide. (mais d&#39;autres solutions
-                    sont possibles...) </p>
+                <p>
+                    Par exemple, pour accéder au port 8282 :<br>
+                    <code><a class="env-url-prefix" target="_blank" href="/proxy/8282">/proxy/8282</a></code>
+                </p>
 
             </div>
         </aside>
