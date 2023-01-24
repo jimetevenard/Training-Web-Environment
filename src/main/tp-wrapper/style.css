@@ -20,12 +20,26 @@ aside {
     padding: 10px;
     color: rgb(63, 63, 63);
 }
-aside h1, aside h2, aside h3, aside h4, aside h5, aside h6 {
+aside h1, aside h2, aside h3, aside h4, aside h5, aside h6,
+aside a, aside a:visited {
     color: rgb(44, 68, 136);
+    transition: 0.4s color;
+}
+aside a:hover, aside a:active {
+    color: rgb(70, 139, 171);
+}
+aside ul.toc-generale {
+    list-style: none;
+    padding: 0 0 0 1em;
+    border-left: 3px solid rgb(156, 163, 184);
 }
 aside .consigne {
-    font-weight: bold;
     color: rgb(97, 114, 160);
+    padding: 0 0 0 1em;
+    list-style-type: square;
+}
+aside  strong {
+    color: rgb(44, 68, 136);
 }
 
 
@@ -64,4 +78,20 @@ aside pre {
 
 .wrapper[data-collapsed="true"] .tp-content {
     display: none;
+}
+aside #btn-repli {
+    /* padding-left: 10px; */
+    display: block;
+    border: none;
+    background: transparent;
+    color: rgb(44, 68, 136);
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.wrapper[data-collapsed="false"] aside #btn-repli::after {
+    content: ' →';
+}
+.wrapper[data-collapsed="true"] aside #btn-repli::before {
+    content: '← ';
 }

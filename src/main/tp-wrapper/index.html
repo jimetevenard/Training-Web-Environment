@@ -16,7 +16,6 @@
             <button id="btn-repli">Replier</button>
             <div class="tp-content">
                 <!-- TODO : Ne plus être en statique là dessus-->
-                <!-- TODO : Etoffer le TP -->
                 <h1 id="">Environnement Java</h1>
 
                 <!-- Une TOC est générée en JS : Elle est placée après le premier h1, et référence tous les h2 -->
@@ -24,19 +23,43 @@
                 <p>Bienvenue dans votre Environnement de travail Java</p>
 
                 <p>
-                    Il est basé sur Visual Studio Code. Un JDK est installé, ainsi que l'extension Java pour VSCode
+                    Il est basé sur <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>.
                 </p>
+
+                <p>Un JDK est installé, ainsi que l'extension Java pour VSCode</p>
 
                 <h2>Import d'un projet</h2>
 
                 <p>Les projets Java / Maven sont automatiquement importés.</p>
 
-                <p class="consigne">Utilisez la vue <strong>Java Projects</strong> pour naviguer plus facilement dans les sources</p>
+                <ul class="consigne">
+                    <li>Utilisez la vue <strong>Java Projects</strong> pour naviguer plus facilement dans les sources</li>
+                </ul>
+
+                <h2>Dépôt de fichiers</h2>
+
+                <p>
+                    Il est possible de grisser / déposer des fichiers ou des répertoires depuis votre ordinateur
+                    vers l'environnement.
+                </p>
+
+                <ul class="consigne">
+                    <li>
+                        Glissez un fichier ou un répertoire vers le volet <strong>File Explorer </strong> situé sur la gauche
+                        de l'éditeur pour ajouter ces fichiers à l'environnement.
+                    </li>
+                </ul>
+
+                <ul class="consigne">
+                    <li>
+                        Glissez un fichier vers la zone principale de l'éditeur pour en ouvrir le contenu dans l'éditeur.
+                    </li>
+                </ul>
 
                 <h2>Clone d'un dépot Git</h2>
 
                 <p>Vous pouver ouvrir un terminal par le menu <strong>Terminal > New Terminal</strong></p>
-                <p class="consigne">Saisir la commande <code>git clone https://votre-depot...</code></p>
+                <ul class="consigne"><li>Saisir la commande <code>git clone https://votre-depot...</code></li></ul>
 
                 <h2>Accédez à votre application</h2>
 
@@ -44,9 +67,9 @@
                     Pour accéder à un port lancé en local d'environnement depuis votre navigateur local
                     (ou autre client Web : Postman...)</p>
 
-                <p class="consigne">
-                    Utilisez l'URL <code class="env-url-prefix">/proxy/&lt;PORT DE VOTRE APP&gt;</code>
-                </p>
+                <ul class="consigne">
+                    <li>Utilisez l'URL <code class="env-url-prefix">/proxy/&lt;PORT DE VOTRE APP&gt;</code></li>
+                </ul>
 
                 <p>
                     Par exemple, pour accéder au port 8282 :<br>
