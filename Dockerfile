@@ -13,8 +13,9 @@ USER root
 # ===========================
 
 RUN apt-get update \
-    && apt-get install -y nginx \
-    && apt-get install -y openjdk-11-jdk
+    && apt-get install -y nginx openjdk-11-jdk-headless \
+    && rm -rf /var/lib/apt/lists/*
+
 
 # Wrapper HTML et reverse-proxy Nginx
 # ===================================
@@ -35,6 +36,9 @@ ENTRYPOINT ["dumb-init", "sh", "docker-init.sh"]
 
 USER coder
 
+RUN git config --global user.name "Docker Env" \
+    && git config --global user.email contact@jimetevenard.com
+
 # ===============================================================
 # ===============================================================
 # FixMe : Ce qui précède est générique (hormis le HTML du TP) et
@@ -48,23 +52,17 @@ USER coder
 # ===============================
 
 RUN code-server --install-extension vscjava.vscode-java-pack
-RUN code-server --install-extension Pivotal.vscode-boot-dev-pack
+# RUN code-server --install-extension Pivotal.vscode-boot-dev-pack [Trop lourd, pas indispensable]
 
-RUN mkdir /home/coder/workspace/
+COPY --chown=coder:coder src/main/vscode/settings.json /home/coder/.local/share/code-server/User/settings.json
 
-COPY src/main/vscode/settings.json /home/coder/.local/share/code-server/User/settings.json
-RUN sudo chown -R coder /home/coder/.local/share/code-server/User/settings.json
-
-RUN cd /home/coder/workspace/ \
+RUN mkdir /home/coder/workspace/ && cd /home/coder/workspace/ \
     && git clone https://github.com/jimetevenard/spring-hello-world.git \
-    && echo "\nserver.port=8282" >> spring-hello-world/src/main/resources/application.properties
-#   Le port 8080 est déjà occupé par code-server (VSCode)
-
-RUN cd /home/coder/workspace/spring-hello-world \
-    && git config --global user.name "Docker Env" \
-    && git config --global user.email contact@jimetevenard.com \
+#   ## Le port 8080 est déjà occupé par code-server (VSCode) => 8282
+    && echo "\nserver.port=8282" >> spring-hello-world/src/main/resources/application.properties \
+    && cd /home/coder/workspace/spring-hello-world \
     && git add --all && git commit -m "[Docker env] Mise en place Spring Hello World"
 
-# FixMe : Il faaudra séparer le wrapper du contenu du TP
+# FixMe : Il faudra séparer le wrapper du contenu du TP
 # TODO : Placé à la fin pour le debug
 COPY src/main/tp-wrapper/ /usr/share/nginx/html/env/
