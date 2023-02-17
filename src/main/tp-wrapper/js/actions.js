@@ -14,6 +14,7 @@ var glop;
     const TOC_CLASS = 'toc-generale';
 
     const PREFIX_LINKS_TO_MENU = '#editor::menu::';
+    const PREFIX_LINKS_TO_VIEW = '#editor::view::';
 
 
 
@@ -57,16 +58,25 @@ var glop;
     document.querySelector('h1')?.insertAdjacentElement('afterend', toc);
 
 
-    // Liens vers les éléments de menu
+    // Liens vers les éléments de l'éditeur
     document.querySelectorAll('aside a').forEach(linkElement => {
         const href = linkElement.getAttribute('href');
 
         if(href?.startsWith(PREFIX_LINKS_TO_MENU)){
+            // Lien vers un item de menu 
             linkElement.addEventListener('click', e => {
                 e.preventDefault();
 
                 const menuArray = href.substring(PREFIX_LINKS_TO_MENU.length).split('/');
                 vscodeHelper.overLightMenu(menuArray);
+            });
+        } else if (href?.startsWith(PREFIX_LINKS_TO_VIEW)){
+            // Lien vers une vue de gauche
+            linkElement.addEventListener('click', e => {
+                e.preventDefault();
+
+                const viewTabLabel = href.substring(PREFIX_LINKS_TO_VIEW.length);
+                vscodeHelper.triggerLeftViewTab(viewTabLabel);
             });
         }
     })
