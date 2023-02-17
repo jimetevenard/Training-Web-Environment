@@ -65,4 +65,7 @@ RUN mkdir /home/coder/workspace/ && cd /home/coder/workspace/ \
 
 # FixMe : Il faudra séparer le wrapper du contenu du TP
 # TODO : Placé à la fin pour le debug
+# TODO / Debug : Pour tester plus rapidement la partie JS, On peut commenter
+#        le COPY ci-dessous et faire un bind-mount
+#        docker run -v $(pwd)/src/main/tp-wrapper:/usr/share/nginx/html/env/ etc...
 COPY src/main/tp-wrapper/ /usr/share/nginx/html/env/
