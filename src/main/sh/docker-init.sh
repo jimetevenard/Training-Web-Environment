@@ -7,4 +7,4 @@ sudo nginx
 # Lancement code-server
 # (process attaché, doit être le dernier step)
 echo "[JIM] Lancons code-server"
-code-server --host 0.0.0.0 . --auth none --disable-workspace-trust /home/coder/workspace/
+PORT=1991 && echo $PORT && code-server --bind-addr 127.0.0.1:$PORT --auth none --disable-workspace-trust /home/coder/workspace/
