@@ -56,8 +56,7 @@ RUN code-server --install-extension vscjava.vscode-java-pack
 
 COPY --chown=coder:coder src/main/vscode/settings.json /home/coder/.local/share/code-server/User/settings.json
 
-RUN mkdir /home/coder/workspace/ && cd /home/coder/workspace/ \
-    && git clone https://github.com/jimetevenard/spring-hello-world.git
+ENV GIT_REPOSITORY=https://github.com/jimetevenard/spring-hello-world.git
 
 # FixMe : Il faudra séparer le wrapper du contenu du TP
 # TODO : Placé à la fin pour le debug

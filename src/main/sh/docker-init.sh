@@ -1,3 +1,7 @@
+# clone du dépôt
+WORKDIR=$PWD && mkdir /home/coder/workspace/ && cd /home/coder/workspace/ \
+    && git clone $GIT_REPOSITORY || echo "[JIM] Unable to clone repository $GIT_REPOSITORY" \
+    && cd $WORKDIR
 
 # Lancement nginx
 echo "[JIM] Lancons nginx"
