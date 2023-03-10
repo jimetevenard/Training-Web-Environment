@@ -3,7 +3,7 @@ name: Docker Image CI
 on:
   push:
     branches:
-      - 'master'
+      - 'java-interactive'
 
 jobs:
   docker:
@@ -22,8 +22,7 @@ jobs:
         with:
           push: true
           tags: |
-            jimetevenard/code-env:relaxng
-            jimetevenard/code-env:relaxng-latest
+            jimetevenard/code-env:java-beta
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
