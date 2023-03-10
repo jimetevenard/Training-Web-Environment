@@ -57,11 +57,7 @@ RUN code-server --install-extension vscjava.vscode-java-pack
 COPY --chown=coder:coder src/main/vscode/settings.json /home/coder/.local/share/code-server/User/settings.json
 
 RUN mkdir /home/coder/workspace/ && cd /home/coder/workspace/ \
-    && git clone https://github.com/jimetevenard/spring-hello-world.git \
-#   ## Le port 8080 est déjà occupé par code-server (VSCode) => 8282
-    && echo "\nserver.port=8282" >> spring-hello-world/src/main/resources/application.properties \
-    && cd /home/coder/workspace/spring-hello-world \
-    && git add --all && git commit -m "[Docker env] Mise en place Spring Hello World"
+    && git clone https://github.com/jimetevenard/spring-hello-world.git
 
 # FixMe : Il faudra séparer le wrapper du contenu du TP
 # TODO : Placé à la fin pour le debug
