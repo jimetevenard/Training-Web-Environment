@@ -19,6 +19,7 @@ docker run -d -p 127.0.0.1:80:80 jimetevenard/code-env:<env image>
 ### Variantes
 
 - [XML Relaxng](xml-relaxng/README.md) : `jimetevenard/code-env:xml-relaxng`
+- [Java](java/README.md) : `jimetevenard/code-env:java`
 
 ### Extensibilité
 
@@ -39,7 +40,7 @@ Chaque environnement est construit à partir
 
 * Le script de lancement spécifie l'option `--auth none` pour désactiver l'authentification par mot de passe de code-server (de façon à générer nous même l'authentification)
 
-* Il peut être utile de faire un *volume* sur le répertoire du projet (pour le conserver à l'extérieur du container : `-v "/somwhere/on/host:/home/coder/project"`
+* Il peut être utile de faire un *volume* sur le répertoire du projet (pour le conserver à l'extérieur du container : `-v "/somwhere/on/host:/home/coder/workspace"`
 
 ## Build en local du Dockerfile
 

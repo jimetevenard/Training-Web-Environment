@@ -41,10 +41,4 @@ RUN git config --global user.name "Docker Env" \
 
 COPY --chown=coder:coder _common/vscode/settings.json /home/coder/.local/share/code-server/User/settings.json
 
-# FixMe : Séparer le TP du wrapper HTML
 COPY _common/tp-wrapper/ /usr/share/nginx/html/env/
-
-
-
-
-

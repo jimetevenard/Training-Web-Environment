@@ -29,6 +29,7 @@ jobs:
       matrix:
         flavor:
         - xml-relaxng
+        - java
     steps:
       -
         name: Checkout
