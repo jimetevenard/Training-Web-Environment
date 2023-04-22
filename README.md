@@ -1,9 +1,13 @@
-# Env Docker - TP RelaxNG
+# Env Docker - Java
 
-Environnement pédagogique web - [TP sur le langage de grammaire XML RelaxNG](https://relaxng.org/)
+Environnement pédagogique web - Java
 
 Basé sur [codercom/code-server](https://github.com/cdr/code-server), il expose un éditeur [VSCode](https://code.visualstudio.com/) online, accessible depuis un navigateur web.  
-Les [fichiers sources du TP](https://github.com/jimetevenard/TP-RelaxNg.git) et son environnement d'exécution (Java + [Jing](https://github.com/relaxng/jing-trang)) sont préinstallés.
+
+Un dépôt Git peut être cloné au lancement du *container* : son URL doit être fournie via la variable d'environnement `GIT_REPOSITORY`
+
+Aucune *authentication* n'est actuellement gérée : le repository doit être plublic.  
+Si aucune URL n'est fournie, le repository [Spring Hello World](https://github.com/jimetevenard/spring-hello-world) sera clonné.
 
 ## Lancement et utilisation
 
@@ -11,10 +15,10 @@ Cette image est publiée automatiquement sur le dépôt central [Docker Hub](htt
 
 ````
 # Pull de l'image depuis Docker Hub (facultatif, sera fait lors du run à défaut)
-docker pull jimetevenard/code-env:relaxng
+docker pull jimetevenard/code-env:java-beta
 
 # lancement d'un container et exposition du port 80 en local
-docker run -d -p 127.0.0.1:80:80 jimetevenard/code-env:relaxng
+docker run -d -p 127.0.0.1:80:80 jimetevenard/code-env:java-beta
 ````
 
 ### Accès depuis un navigateur
@@ -25,7 +29,7 @@ L'éditeur s'ouvre alors sur le projet du TP !
 La consigne du TP est affichée à droite de l'application.
 
 
-![Screenshot Code Server](docs/screenshot-code-env-rng.png)
+![Screenshot Code Server](docs/screenshot-code-env-java.png)
 
 ### Test de l'environnement du TP
 
