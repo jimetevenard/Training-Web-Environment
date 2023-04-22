@@ -1,9 +1,8 @@
-# Env Docker - TP RelaxNG
+#  Training Web Environment
 
-Environnement pédagogique web - [TP sur le langage de grammaire XML RelaxNG](https://relaxng.org/)
+*Environnements pédagogiques Web pour la formation IT*
 
-Basé sur [codercom/code-server](https://github.com/cdr/code-server), il expose un éditeur [VSCode](https://code.visualstudio.com/) online, accessible depuis un navigateur web.  
-Les [fichiers sources du TP](https://github.com/jimetevenard/TP-RelaxNg.git) et son environnement d'exécution (Java + [Jing](https://github.com/relaxng/jing-trang)) sont préinstallés.
+Basé sur [codercom/code-server](https://github.com/cdr/code-server), il expose un éditeur [VSCode](https://code.visualstudio.com/) online, accessible depuis un navigateur web.
 
 ## Lancement et utilisation
 
@@ -11,32 +10,13 @@ Cette image est publiée automatiquement sur le dépôt central [Docker Hub](htt
 
 ````
 # Pull de l'image depuis Docker Hub (facultatif, sera fait lors du run à défaut)
-docker pull jimetevenard/code-env:relaxng
+docker pull jimetevenard/code-env:<env image>
 
 # lancement d'un container et exposition du port 80 en local
-docker run -d -p 127.0.0.1:80:80 jimetevenard/code-env:relaxng
+docker run -d -p 127.0.0.1:80:80 jimetevenard/code-env:<env image>
 ````
 
-### Accès depuis un navigateur
-
-Accéder ensuite à <http://localhost/>  
-
-L'éditeur s'ouvre alors sur le projet du TP !  
-La consigne du TP est affichée à droite de l'application.
-
-
-![Screenshot Code Server](docs/screenshot-code-env-rng.png)
-
-### Test de l'environnement du TP
-
-L'utilitaire *Jing* est disponible dans le *path* du container.
-
-Exemple : [ouvrir le terminal intégré à VSCode](https://code.visualstudio.com/docs/editor/integrated-terminal) et taper la commande suivante :
-
-````
-# Valider avec Jing le fichier livres.xml avec le schéma livres-init.xml
-jing livres-init.rng livres.xml
-````
+- [XML Relaxng](xml-relaxng/README.md) : `jimetevenard/code-env:xml-relaxng`
 
 ### Notes
 
@@ -54,9 +34,13 @@ jing livres-init.rng livres.xml
 
 Pour tester une modification en local du Dockerfile ou des sources, vous pouvez builder vous-même l'image :
 
-````
-# build de l'image de ce dépot
-docker build -t code-env:relaxng .
+````sh
+# build base image
+docker build -t jimetevenard/code-env:base .
+
+# build env-specific image
+cd <env flavor> # e.g. cd xml-relaxng
+docker build -t env-tag .
 ````
 
 ## Annexe : Liste complète des *args* de *code-server*
