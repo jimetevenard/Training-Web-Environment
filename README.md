@@ -16,7 +16,18 @@ docker pull jimetevenard/code-env:<env image>
 docker run -d -p 127.0.0.1:80:80 jimetevenard/code-env:<env image>
 ````
 
+### Variantes
+
 - [XML Relaxng](xml-relaxng/README.md) : `jimetevenard/code-env:xml-relaxng`
+
+### Extensibilité
+
+Chaque environnement est construit à partir
+
+- D'un `Dockerfile` ([exemple](xml-relaxng/Dockerfile)) installant l'environnement spécifique du TP.  
+  Il débute par `FROM jimetevenard/code-env:base` pour exploiter l'image de base.
+- D'un fichier de consigne, affiché latéralement, au format Markdown. ([exemple](xml-relaxng/instructions.md))  
+  Il doit conventionnellement être nommé `instructions.md` pour être chargé et converti depuis le front.
 
 ### Notes
 
