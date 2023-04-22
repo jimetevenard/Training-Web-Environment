@@ -1,8 +1,6 @@
 TP Relax NG
 ===========
 
-> TODO je suis Markdown !!
-
 Dans ce TP, vous allez valider un document XML avec un schéma RelaxNG.
 
 Vous devrez compléter le fichier `livres-init.rng` pour qu'il valide le document `livres.xml`.
