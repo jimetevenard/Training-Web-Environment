@@ -9,5 +9,5 @@ ENV GIT_REPOSITORY=https://github.com/jimetevenard/TP-RelaxNg.git
 
 
 RUN mkdir /home/coder/jing \
-    && wget --output-document=/home/coder/jing/jing.jar "https://github.com/jimetevenard/TP-RelaxNg/blob/master/jing.jar?raw=true" \
+    && curl --location --output /home/coder/jing/jing.jar "https://github.com/jimetevenard/TP-RelaxNg/blob/master/jing.jar?raw=true" \
     && echo "alias jing='java -jar /home/coder/jing/jing.jar'" > /home/coder/.bash_aliases
