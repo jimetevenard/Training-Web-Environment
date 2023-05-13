@@ -16,7 +16,7 @@ Ce fichier d'instructions, affiché à droite de l'éditeur peut y être remplac
   Voir la [surcharge xml-relaxng](https://github.com/jimetevenard/Training-Web-Environment/blob/master/xml-relaxng/Dockerfile) par exemple.
 - Il est possible de créer dans ce fichier des liens vers des éléments de
   l'UI de l'éditeur ([exemple](#editor::menu::Terminal/New_Terminal)) avec le prefixe `#editor::`  
-  voir [fichier source](https://raw.githubusercontent.com/jimetevenard/Training-Web-Environment/master/instructions.md))
+  voir [fichier source](https://github.com/jimetevenard/Training-Web-Environment/blob/master/instructions.md?plain=1))
 
 
 
