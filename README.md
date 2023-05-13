@@ -12,16 +12,18 @@ Cette image est publiée automatiquement sur le dépôt central [Docker Hub](htt
 
 ````
 # Pull de l'image depuis Docker Hub (facultatif, sera fait lors du run à défaut)
-docker pull jimetevenard/code-env:<env image>
+docker pull jimetevenard/code-env:base
 
 # lancement d'un container et exposition du port 80 en local
-docker run -d -p 127.0.0.1:80:80 jimetevenard/code-env:<env image>
+docker run -d -p 127.0.0.1:80:80 jimetevenard/code-env:base
 ````
 
 ### Variantes
 
+- Image de base : `jimetevenard/code-env:base`  
+  Les autres variantes se basent sur cette image 
 - [XML Relaxng](xml-relaxng/README.md) : `jimetevenard/code-env:xml-relaxng`
-- [Java](java/README.md) : `jimetevenard/code-env:java`
+- [Java - Spring Boot](java/README.md) : `jimetevenard/code-env:java`
 
 ### Extensibilité
 
@@ -38,7 +40,7 @@ Chaque environnement est construit à partir
 
   * On aurait pu exploser ce port `80` à l'exterieur de l'hôte (si celui-ci est accessible depuis Internet ou un réseau) avec simplement `-p 80:80`.
   * Cela n'est toutefois pas recommandé, on préferera utiliser un *reverse proxy* (avec chiffrement TLS pour servir en HTTPS) pour exposer notre container. L'usage d'un serveur en *reverse proxy* permet également de mapper un (sous-)domaine différent pour chacun des conteneurs.  
-  * Code-server est néanmois capable de gérer lui-même les certificats TLS. (voir § Liste des *args* de *code-server*)
+  * Code-server est néanmoins capable de gérer lui-même un certificat TLS auto-signé. (voir § Liste des *args* de *code-server*)
 
 * Le script de lancement spécifie l'option `--auth none` pour désactiver l'authentification par mot de passe de code-server (de façon à générer nous même l'authentification)
 
